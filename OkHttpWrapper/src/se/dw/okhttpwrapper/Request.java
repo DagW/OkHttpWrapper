@@ -42,10 +42,6 @@ public class Request {
 		return this;
 	}
 	
-	/*
-	 * Private methods
-	 */
-	
 	private String createParameters(List<NameValuePair> list){
 		String params = "";
 		if(list.size()>0){
@@ -68,9 +64,6 @@ public class Request {
 				}
 				
 			}
-//			if(params.endsWith("&")){
-//				params = params.substring(0, params.length()-1);
-//			}
 		}
 		return params;
 	}
@@ -82,15 +75,7 @@ public class Request {
 	private String getGetParameters(){
 		return createParameters(getparams);
 	}
-	
-	/*
-	 * Methods for executing
-	 */
-	/**
-	 * 
-	 * @param request Request object
-	 * @return Response object
-	 */
+
 	public Response execute(){
 		Response response = new Response();
 		try {
@@ -177,16 +162,6 @@ public class Request {
 	        
 	        byte[] byteresponse = readFully(in);
 	        String stringresponse = new String(byteresponse, "UTF-8");
-	        
-//			InputStreamReader isr = new InputStreamReader(in);
-//			 
-//			BufferedReader r = new BufferedReader(isr);
-//			StringBuilder total = new StringBuilder();
-//			String line;
-//			while ((line = r.readLine()) != null) {
-//			  total.append(line);
-//			}
-//	        String stringresponse = total.toString();
 	        
 	        response.setResponse( stringresponse );
 	        response.stop();

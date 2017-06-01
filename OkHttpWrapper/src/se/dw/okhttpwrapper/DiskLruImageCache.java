@@ -17,6 +17,9 @@ import android.util.Log;
 
 import com.squareup.okhttp.internal.DiskLruCache;
 
+/*
+https://stackoverflow.com/questions/10185898/using-disklrucache-in-android-4-0-does-not-provide-for-opencache-method
+ */
 public class DiskLruImageCache {
 
 	private DiskLruCache mDiskCache;
